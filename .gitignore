@@ -1,0 +1,14 @@
+# Files
+.env
+tests.py
+
+# Extensions
+*.sqlite3
+*.docx
+
+# Folders
+/img
+/data
+/venv
+/z_tests
+__pycache__/

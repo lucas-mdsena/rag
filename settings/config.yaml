@@ -1,0 +1,5 @@
+- response_agent:
+  model: gemini-1.5-flash-002
+  temperature: 0
+  max_output_tokens: 8000
+  response_type: application/json 
