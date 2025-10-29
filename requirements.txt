@@ -1,9 +1,18 @@
+# TODO: add versions
+ai-safeguards
 chromadb
 fastapi
 google-genai
 google-generativeai
 langchain
+langchain[google-genai]
+langchain-text-splitters
+langchain-google-genai
+langchain-community
+langchain-chroma
+openai
 pydantic
 PyMuPDF
 python-dotenv
+streamlit
 uvicorn

@@ -1,3 +1,5 @@
+# https://docs.langchain.com/oss/python/langchain/rag#expand-for-full-code-snippet
+
 import os
 import json
 
@@ -8,7 +10,7 @@ import chromadb
 from chromadb.utils.embedding_functions import GoogleGenerativeAiEmbeddingFunction
 
 from utils import setup_logger, read_yaml_file
-from prompts import SYSTEM_PROMPT
+from src.prompts.system_prompt import SYSTEM_PROMPT
 
 
 

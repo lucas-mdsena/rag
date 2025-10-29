@@ -1,5 +1,12 @@
-- response_agent:
-  model: gemini-1.5-flash-002
+response_agent:
+  model: gemini-2.0-flash-lite
   temperature: 0
   max_output_tokens: 8000
-  response_type: application/json 
+  response_type: application/json
+
+google_embeddings:
+  model: models/gemini-embedding-001
+
+vector_store:
+  persist_directory: data/db
+  collection_name: laws

@@ -1,0 +1,2 @@
+from utils import VectorDataBaseManager
+VectorDataBaseManager()

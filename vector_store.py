@@ -1,4 +1,6 @@
-from src import VectorDataBaseManager
+from utils import VectorDataBaseManager
+
+
 
 vectordb_manager = VectorDataBaseManager()
 
