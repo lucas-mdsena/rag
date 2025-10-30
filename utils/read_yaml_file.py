@@ -22,9 +22,4 @@ def read_yaml_file(yaml_file_path: str) -> Dict[str, Any]:
             logger.error(f"FILE {yaml_file_path} DOESN'T EXISTS")
             return dict()
 
-
-
-
-if __name__ == '__main__':
-    settings = read_yaml_file("settings/config.yaml")
-    print(settings)
+settings = read_yaml_file("settings/config.yaml")

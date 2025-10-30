@@ -1,11 +1,12 @@
-response_agent:
+google:
+  embedding_model: models/gemini-embedding-001
   model: gemini-2.0-flash-lite
   temperature: 0
   max_output_tokens: 8000
   response_type: application/json
 
-google_embeddings:
-  model: models/gemini-embedding-001
+openai:
+  embedding_model: text-embedding-3-small
 
 vector_store:
   persist_directory: data/db

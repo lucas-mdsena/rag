@@ -1,18 +1,18 @@
 # TODO: add versions
 ai-safeguards
-chromadb
-fastapi
-google-genai
-google-generativeai
-langchain
-langchain[google-genai]
-langchain-text-splitters
-langchain-google-genai
-langchain-community
-langchain-chroma
-openai
+# google-genai
+# google-generativeai
+
+# langchain
+# langchain[google-genai]
+# langchain-chroma
+# langchain-community
+# langchain-docling
+# langchain-text-splitters
+# langchain-google-genai
+
+# openai
 pydantic
-PyMuPDF
+pymupdf
 python-dotenv
 streamlit
-uvicorn
