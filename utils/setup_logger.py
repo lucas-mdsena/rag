@@ -23,3 +23,5 @@ def setup_logger() -> logging.Logger:
     logger.setLevel(logging.INFO)
 
     return logger
+
+logger = setup_logger()

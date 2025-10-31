@@ -1,5 +1,17 @@
-- response_agent:
-  model: gemini-1.5-flash-002
+google:
+  embedding_model: models/gemini-embedding-001
+  model: gemini-2.0-flash-lite
   temperature: 0
   max_output_tokens: 8000
-  response_type: application/json 
+  response_type: application/json
+
+openai:
+  embedding_model: text-embedding-3-small
+  llm_model: gpt-4o-mini
+  temperature: 0
+  max_output_tokens: 8000
+
+vector_store:
+  persist_directory: vector_store
+  documents_directory: docs
+  collection_name: laws

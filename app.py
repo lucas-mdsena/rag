@@ -1,28 +1,32 @@
-import traceback
+import streamlit as st
 
-import uvicorn
-from fastapi import FastAPI, HTTPException
-
-from src import RAGFlowManager
-from utils import setup_logger
+from src import RAGManager
 
 
 
-app = FastAPI()
-logger = setup_logger()
-rag_manager = RAGFlowManager()
+rag_manager = RAGManager()
 
-@app.post("/rag")
-def rag_flow(data: QueryRequest):
-    try:
-        response = rag_manager.generate_response(query=data.text)
-        return {"response": response}
-    except Exception as e:
-        error = traceback.format_exc()
-        logger.error(f"ERROR PROCESSING REQUEST: {error}.")
-        raise HTTPException(status_code=400, detail=f"Error processing request: {str(e)}.")
+st.title("Assistente de IA Jurídico")
 
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
+# Display chat messages from history on app rerun
+with st.chat_message("assistant"):
+    st.markdown(f"Olá! Como posso ajudar?")
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=5000, reload=True)
+# User input
+if prompt := st.chat_input("Insira sua pergunta aqui..."):
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    response = rag_manager.retrieve_and_generate(prompt)
+
+    # AI response
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
