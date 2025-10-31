@@ -1,1 +1,1 @@
-from .rag_flow_manager import RAGFlowManager
+from .rag_flow_manager import RAGManager

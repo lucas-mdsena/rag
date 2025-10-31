@@ -7,7 +7,11 @@ google:
 
 openai:
   embedding_model: text-embedding-3-small
+  llm_model: gpt-4o-mini
+  temperature: 0
+  max_output_tokens: 8000
 
 vector_store:
-  persist_directory: data/db
+  persist_directory: vector_store
+  documents_directory: docs
   collection_name: laws

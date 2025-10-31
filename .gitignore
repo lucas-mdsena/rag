@@ -1,14 +1,15 @@
 # Files
 .env
-tests.py
 
 # Extensions
 *.sqlite3
 *.docx
+*.pdf
 
 # Folders
-/img
 /data
 /venv
 /tests
 __pycache__/
+/vector_store
+/docs

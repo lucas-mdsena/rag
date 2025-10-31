@@ -23,6 +23,8 @@ class VectorStoreManager:
             api_key=os.environ["OPENAI_API_KEY"]
         )
         # Creates, if not exists, or loads existing vector store
+        if not os.path.exists(settings['vector_store']['persist_directory']):
+            os.makedirs(settings['vector_store']['persist_directory'])
         self.vector_store = Chroma(
             collection_name=settings['vector_store']['collection_name'],
             embedding_function=self.embedding_model,
@@ -69,5 +71,5 @@ class VectorStoreManager:
             chunks = self.__split_document(loaded_doc)
             self.vector_store.add_documents(chunks)
 
-    def retrieve_chunks(self, query: str, k: int = 5) -> list[Document]:
+    def retrieve(self, query: str, k: int = 5) -> list[Document]:
         return self.vector_store.similarity_search(query, k=k)
